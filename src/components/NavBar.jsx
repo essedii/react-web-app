@@ -8,12 +8,8 @@ export const NavBar = ({linkName}) => {
 
   return (
     <nav className="nav bg-primary">
-
-
-        <Link className='text-dark' to={`/${linkName}`}> {linkName} </Link>
+        <Link className='text-dark' to={linkName === 'home' ? '/' : `/${linkName}`}> {linkName} </Link>
     </nav>
   )
-
-
-  }
+}
 
