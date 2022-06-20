@@ -5,6 +5,13 @@ import { Route, Routes} from "react-router-dom";
 import Home from "./pages/home/Home";
 import AboutUs from "./pages/about-us/AboutUs";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import {faGauge, faGrip, faGripLines} from '@fortawesome/free-solid-svg-icons'
+
+
+library.add(faGauge, faGrip, faGripLines,  )
+
 function App() {
   return (
     <Routes>

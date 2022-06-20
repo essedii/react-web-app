@@ -1,17 +1,34 @@
 import React from 'react'
 
 import { NavBar } from '../../components/NavBar';
+import SideBar from '../../components/SideBar';
 
 
-const linkName = 'about-us'
-function Home()
-{
+
+function Home() {
+
+  const linkName = 'about-us';
+
   return (
-    <div>
+    <div className='flex-column'>
+      <SideBar></SideBar>
+       
+
       <NavBar linkName={linkName}></NavBar>
-      <h1>Home</h1>
-    </div>
+      <div>
+
+      <div className='d-flex'>
+
+     
+
+        <div>
+         <h1>Home</h1>
+        </div>
+
+      </div>
   
+    </div>
+    </div>
   )
 }
 
