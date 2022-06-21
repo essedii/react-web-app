@@ -1,34 +1,55 @@
 import React from 'react'
 
-import { NavBar } from '../../components/NavBar';
+import Button from '../../components/Button';
+import { useState } from 'react';
+
+import NavBar from '../../components/NavBar';
 import SideBar from '../../components/SideBar';
 
 
 
-function Home() {
+const Home = () => {
 
-  const linkName = 'about-us';
+  const [isOpen, setOpen] = useState(false)
+
+  const setSide = () => {
+    alert('home')
+  }
+
+  
 
   return (
-    <div className='flex-column'>
-      <SideBar></SideBar>
+   
+    <div >
+ 
+      <Button btnFunc = {() => setSide()}/>
+      {/* <SideBar isOpen={isOpen}/> */}
+    
+    
+
        
+    </div>
+   
+    // <div className='flex-column'>
+    //   <SideBar isOpen={isOpen} ></SideBar>
+    //   <NavBar linkName={linkName}>
+    //   </NavBar>
+    //   <div>
+    //   <Button >vds</Button>
 
-      <NavBar linkName={linkName}></NavBar>
-      <div>
 
-      <div className='d-flex'>
+    //   <div className='d-flex'>
 
      
 
-        <div>
-         <h1>Home</h1>
-        </div>
+    //     <div>
+    //      <h1>Home</h1>
+    //     </div>
 
-      </div>
+    //   </div>
   
-    </div>
-    </div>
+    // </div>
+    // </div>
   )
 }
 
