@@ -10,36 +10,39 @@ const Home = () => {
 
   const isInitialMount = useRef(true);
 
-  const [data, setData] = useState('');
+  const [sideButton, setSideButton] = useState('');
+  const [dataHome, setDataHome] = useState(false);
 
-  const childToParent = (childdata) => {
-    setData(childdata);
+  const navToHome = (navdata) => {
+    setSideButton(navdata);
   }
-
-  const [dataParent, setDataParent] = useState(false);
-  
-  const parentToChild = () => {
-    setDataParent();
+  const sideToHome = (sidedata) => {
+    setSideButton(sidedata);
   }
+  const homeToSide = () => {
+    setDataHome();
+  }
+  // const sideToHome = (sidedata) => {
+  //   setButtonPressed(sidedata);
+  // }
 
   useEffect(() => {
     if (isInitialMount.current) {
        isInitialMount.current = false;
     } else {
     console.log('NavBar updated')}
-    setDataParent(data)
+    setDataHome(sideButton)
     return () => {
       console.log('NavBar finished update')
     
     }
-  }, [childToParent])
+  }, [sideButton] )
   
 
   return (
     <div>
-     <NavBar childToParent={childToParent}/>
-     {`Button now  ${data}`}
-     <SideBar parentToChild={dataParent}/>
+     <NavBar navToHome={navToHome}/>
+     <SideBar sideToHome={sideToHome} homeToSide={dataHome} />
 
     </div>
   )

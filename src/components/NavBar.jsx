@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 
 
 
-const NavBar = ({childToParent}) => {
+const NavBar = ({navToHome}) => {
 
   const [sideBarState, setSideBarState] = useState(false)
   // const [navBarState, setNaveBarState] = useState(false)
@@ -29,7 +29,7 @@ const NavBar = ({childToParent}) => {
     <div>
       <nav className="nav border-0 " >
         {/* <button  onClick={() => setSideBarState(!sideBarState), childToParent(data)}></button> */}
-        <button  onClick={() => childToParent(true)}></button>
+        <button  onClick={() => navToHome(true)}></button>
         <p>NAVBAR</p> 
       </nav>
     </div>
