@@ -1,23 +1,41 @@
-
-
 import React from 'react'
-// import { useState } from 'react'
-// import { Link } from 'react-router-dom'
 import Button from './Button'
-
-const NavBar = () => {
-  // const [page, setPage] = useState(linkName)
-  function handleClick()  {console.log('im passefrom nav')}
+import { useState, useEffect, useRef } from 'react';
 
 
-  return (
+
+const NavBar = ({childToParent}) => {
+
+  const [sideBarState, setSideBarState] = useState(false)
+  // const [navBarState, setNaveBarState] = useState(false)
+  // const isInitialMount = useRef(true);
+
+  // const data = true
+
+  // useEffect(() => {
+  //   if (isInitialMount.current) {
+  //      isInitialMount.current = false;
+  //   } else {
+  //     setSideBarState(true)
+        
+  
+  //   }
+  // });
+  // useEffect(() => {
+  //   console.log(`Button now pressed ${SideBarState}`)
+  // });
+   return(
    
-   
-    <nav className="nav border-0 " style={{'backgroundColor': 'rgb(36, 36, 36', 'minHeight': '12vh'}}>
-      <p>NAVBAR</p>
-      <Button  handleClick={handleClick}/>
-    </nav>
-  )
+    <div>
+      <nav className="nav border-0 " >
+        {/* <button  onClick={() => setSideBarState(!sideBarState), childToParent(data)}></button> */}
+        <button  onClick={() => childToParent(true)}></button>
+        <p>NAVBAR</p> 
+      </nav>
+    </div>
+   )
+
+
   }
 
 

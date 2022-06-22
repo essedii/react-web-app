@@ -1,13 +1,12 @@
 import React from 'react';
 
-
-const Button = ({btnFunc}) =>  {
+const Button = () =>  {
   return (
   
-    <button 
-      onClick = {btnFunc} >Press Me
-    </button>
-  
+    // <button onClick={() => console.log('hello')}>
+    //   Button
+    // </button>
+  <button>Count</button>
 
   )
 }

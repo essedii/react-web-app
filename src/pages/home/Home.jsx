@@ -1,55 +1,47 @@
 import React from 'react'
 
 import Button from '../../components/Button';
-import { useState } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
+import Interface from '../../components/Interface';
 import NavBar from '../../components/NavBar';
 import SideBar from '../../components/SideBar';
 
-
-
 const Home = () => {
 
-  const [isOpen, setOpen] = useState(false)
+  const isInitialMount = useRef(true);
 
-  const setSide = () => {
-    alert('home')
+  const [data, setData] = useState('');
+
+  const childToParent = (childdata) => {
+    setData(childdata);
   }
 
+  const [dataParent, setDataParent] = useState(false);
+  
+  const parentToChild = () => {
+    setDataParent();
+  }
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+       isInitialMount.current = false;
+    } else {
+    console.log('NavBar updated')}
+    setDataParent(data)
+    return () => {
+      console.log('NavBar finished update')
+    
+    }
+  }, [childToParent])
   
 
   return (
-   
-    <div >
- 
-      <Button btnFunc = {() => setSide()}/>
-      {/* <SideBar isOpen={isOpen}/> */}
-    
-    
+    <div>
+     <NavBar childToParent={childToParent}/>
+     {`Button now  ${data}`}
+     <SideBar parentToChild={dataParent}/>
 
-       
     </div>
-   
-    // <div className='flex-column'>
-    //   <SideBar isOpen={isOpen} ></SideBar>
-    //   <NavBar linkName={linkName}>
-    //   </NavBar>
-    //   <div>
-    //   <Button >vds</Button>
-
-
-    //   <div className='d-flex'>
-
-     
-
-    //     <div>
-    //      <h1>Home</h1>
-    //     </div>
-
-    //   </div>
-  
-    // </div>
-    // </div>
   )
 }
 
