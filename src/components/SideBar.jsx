@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Button, Offcanvas} from 'react-bootstrap';
+import { Offcanvas} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function SideBar({ homeToSide, sideToHome }) {
   const [show, setShow] = useState(homeToSide);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   useEffect(() => {
     console.log('sideUpdate')
@@ -16,20 +18,21 @@ function SideBar({ homeToSide, sideToHome }) {
       console.log('sideEndUpdate')
  
     }
-  }, [setShow] )
-  
-
+  }, [] )
 
   return (
     <>
       <Offcanvas show={homeToSide} onHide={handleClose}>
-        <Offcanvas.Header >
-          <button  onClick={() => sideToHome(false)}>close</button>
+        <Offcanvas.Header  >
+          <div className='d-flex flex-start align-items-center'>
+          <button  className='btn' style={{ 'border':'none', 'cursor': 'hover', 'padding':'0px'}}   onClick={() => sideToHome(false)}> <FontAwesomeIcon  className='fa-fw 'icon="grip-lines"  /></button>
+          <p className='m-0 ms-5'>SideBar</p>
+          </div>
+
           <Offcanvas.Title>{homeToSide}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+     Ciao! <br/> Benvenuto nel mio progetto <br/> React-Web-App... <br/> <br/> 
         </Offcanvas.Body>
       </Offcanvas>
     </>

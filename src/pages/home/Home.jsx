@@ -1,8 +1,5 @@
 import React from 'react'
-
-import Button from '../../components/Button';
 import { useState, useEffect, useRef } from 'react';
-import Interface from '../../components/Interface';
 import NavBar from '../../components/NavBar';
 import SideBar from '../../components/SideBar';
 
@@ -19,13 +16,7 @@ const Home = () => {
   const sideToHome = (sidedata) => {
     setSideButton(sidedata);
   }
-  const homeToSide = () => {
-    setDataHome();
-  }
-  // const sideToHome = (sidedata) => {
-  //   setButtonPressed(sidedata);
-  // }
-
+  
   useEffect(() => {
     if (isInitialMount.current) {
        isInitialMount.current = false;
@@ -43,7 +34,6 @@ const Home = () => {
     <div>
      <NavBar navToHome={navToHome}/>
      <SideBar sideToHome={sideToHome} homeToSide={dataHome} />
-
     </div>
   )
 }

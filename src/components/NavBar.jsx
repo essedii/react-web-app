@@ -1,43 +1,28 @@
 import React from 'react'
-import Button from './Button'
-import { useState, useEffect, useRef } from 'react';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavBar = ({navToHome}) => {
-
-  const [sideBarState, setSideBarState] = useState(false)
-  // const [navBarState, setNaveBarState] = useState(false)
-  // const isInitialMount = useRef(true);
-
-  // const data = true
-
-  // useEffect(() => {
-  //   if (isInitialMount.current) {
-  //      isInitialMount.current = false;
-  //   } else {
-  //     setSideBarState(true)
-        
-  
-  //   }
-  // });
-  // useEffect(() => {
-  //   console.log(`Button now pressed ${SideBarState}`)
-  // });
    return(
-   
     <div>
-      <nav className="nav border-0 " >
-        {/* <button  onClick={() => setSideBarState(!sideBarState), childToParent(data)}></button> */}
-        <button  onClick={() => navToHome(true)}></button>
-        <p>NAVBAR</p> 
+      <nav className="nav border-0  border-bottom " style={{'minHeight': '3rem'}} >
+<div className='d-flex flex-start align-items-center' style={{'padding': '1rem 1rem'   }}>
+  
+          <button 
+            className='btn' 
+            style={{ 'border':'none', 'cursor': 'hover', 'padding':'0px'}}  
+            onClick={() => navToHome(true)}>
+            <FontAwesomeIcon  className='fa-fw 'icon="grip-lines"  />
+          </button>
+        
+        <p className='m-0 ms-5'>React Web App</p>
+   
+</div>
+     
+
       </nav>
     </div>
    )
-
-
   }
-
 
 export default NavBar
 
