@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import NavBar from '../../components/NavBar';
+import Posts from '../../components/Posts';
 import SideBar from '../../components/SideBar';
 
 const Home = () => {
@@ -31,10 +32,11 @@ const Home = () => {
   
 
   return (
-    <div>
+    <>
      <NavBar navToHome={navToHome}/>
      <SideBar sideToHome={sideToHome} homeToSide={dataHome} />
-    </div>
+     <Posts/>
+    </>
   )
 }
 

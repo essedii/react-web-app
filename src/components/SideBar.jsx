@@ -32,7 +32,19 @@ function SideBar({ homeToSide, sideToHome }) {
           <Offcanvas.Title>{homeToSide}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-     Ciao! <br/> Benvenuto nel mio progetto <br/> React-Web-App... <br/> <br/> 
+     Hello Visitor!< br/>  <br/> Benvenuto  in <br/> React Web App... <br/> <br/> 
+     Il progetto è ancora in corso... <br /> < br/> 
+    DONE: < br/> 
+    Components  &#10003; <br/>
+    Pages &#10003; < br/> < br/> 
+    TODO:  <br/> 
+    
+    Routing   <br/> 
+    Fecth Data<br/> 
+    
+     <br/> 
+     <br/> 
+
         </Offcanvas.Body>
       </Offcanvas>
     </>
