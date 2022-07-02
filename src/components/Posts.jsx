@@ -2,87 +2,48 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 const Posts = () => {
+    const url = 'https://picsum.photos';
+    //Page starts from 2 for purely aestetical reason (first page has ugly images)
+    const [page, setPage] = useState(2);
+    const [limit, setLimit] = useState(10);
+    const [id, setId] = useState();
+    const [size, setSize] = useState();
+    const [imageUrl, setImageUrl] = useState();
+    const [imageListUrl, setImageListUrl] = useState();
+    const [image, setImage] = useState();
+    const [imagesList, setImagesList] = useState([]); 
+    const [filtered, setFiltered] =useState([]);
 
-    const[randomUserDataJSON, setRandomUserDataJSON] = useState('')
-    const[userInfos, setUserInfos] = useState([])
-
-    const fetchRandomData = () => {
-        return axios.get('https://randomuser.me/api')
-            .then( ({data}) => {
-                return (data)
+    useEffect( () => {
+        axios
+            .get(`${url}/v2/list?page=${page}&limit=${limit}`)
+            .then(res => {
+                setImagesList(res.data)
+                console.log(res.data, 'resdata')
             })
             .catch(err => {
-            console.log(err);
+                console.log(err)
             })
+        },[]);
+    
+    useEffect( () => {
 
-    }
+    })
 
-    const getFullUserName = (userInfo) => {
-        const {name: {first, last}} = userInfo;
-        console.log()
-        return `${first} ${last}`;
-    }
-
-    useEffect(() => {
-                fetchRandomData().then(randomData => {
-                    setRandomUserDataJSON(JSON.stringify(randomData, null, 2) || 'No user found');
-                    setUserInfos(randomData.results);
-                })
-            },[])
 
     return (
-        <div>
-            {
-                userInfos.map((userInfo) => {
-                    return <pre>{getFullUserName(userInfo)}</pre>
-        
-            
-        })}
-        {/* <pre>{randomUserDataJSON}</pre> */}
-        </div>
-       
+      <div className='d-flex  flex-row align-items-center'  >
+        {imagesList.map(image => {
+            return <img className='img-thumbnail' src={`${url}/id/${image.id}/400/600`}></img> 
+        }
+           
+        )}
+      </div>
     )
+    
 }
 
 
-
-
-
-
-
-
-//     const[randomUserDataJSON, setRandomUserDataJSON] = useState()
-
-
-
-
-//     const fectchRandomData = () => {
-//         return axios.get('https://randomuser.me/api/')
-//             .then((res) => {
-//                 console.log(res.data)
-//                 return JSON.stringify(res.data);
-//         })
-//             .catch(err => {
-//                 console.log(err)
-//         })
-//     }
-
-//     useEffect(() => {
-//         fectchRandomData().then(randomData => {
-//             setRandomUserDataJSON(randomData)
-//         })
-//     })
-//   return (
-//     <div>
-//             <ul>
-//         {randomUserDataJSON.map(userDataJSON => {
-//             <li key={userDataJSON.id}>{userDataJSON.title}</li>
-//         })}
-//     </ul>
-//     </div>
-
-//   )
-// }
-
-
 export default Posts
+
+    
