@@ -7,7 +7,7 @@ const Post = ({id}) => {
 
     return (
         <div>
-            <img onClick={()=> navigate(`/posts/${id}`)} className='img-fluid col m-0' src={`${url}/id/${id}/400/600`}></img>
+            <img onClick={ ()=> navigate(`/posts/${id}`)} className='img-fluid col m-0' src={`${url}/id/${id}/400/600`}></img>
         </div>
        
   )
