@@ -1,10 +1,13 @@
 import React from "react";
+import { useParams, } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import Post from "../../components/Post";
 import NavBar from "../../components/NavBar";
-import Posts from "../../components/Posts";
+
 import SideBar from "../../components/SideBar";
 
-const Home = () => {
+const PostPage = () => {
+  const { id } = useParams();
   const isInitialMount = useRef(true);
 
   const [sideButton, setSideButton] = useState("");
@@ -30,12 +33,12 @@ const Home = () => {
   }, [sideButton]);
 
   return (
-    <div className="w-100">
+    <div>
       <NavBar navToHome={navToHome} />
       <SideBar sideToHome={sideToHome} homeToSide={dataHome} />
-      
+      <Post id={id}> </Post>
     </div>
   );
 };
 
-export default Home;
+export default PostPage;
