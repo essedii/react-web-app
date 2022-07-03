@@ -1,11 +1,11 @@
-.offcanvas {
-  width: 20%; 
-
-}
 
 .btn:focus {
   outline: none!important;
   box-shadow: none!important;
+}
+
+.offcanvas{
+  overflow: hidden;
 }
 
 .side-div{
@@ -29,6 +29,20 @@
   font-size: 14px;
   font-family: sans-serif;
 }
+
+.modal-open{
+  padding: 0px!important;
+}
+
+.offcanvas {
+  width: 20%; 
+
+}
+
+
+
+
+
 
 a{
   text-decoration: none;
@@ -56,6 +70,8 @@ code {
     monospace;
 }
 
-html {
-  height: 100%;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
+

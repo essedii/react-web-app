@@ -22,16 +22,16 @@ function SideBar({ homeToSide, sideToHome }) {
 
   return (
     <>
-      <Offcanvas show={homeToSide} onHide={handleClose}>
+      <Offcanvas show={homeToSide} onHide={handleClose} backdrop={false}>
         <Offcanvas.Header  >
-          <div className='d-flex flex-start align-items-center'>
-          <button  className='btn' style={{ 'border':'none', 'cursor': 'hover', 'padding':'0px'}}   onClick={() => sideToHome(false)}> <FontAwesomeIcon  className='fa-fw 'icon="grip-lines"  /></button>
+          <div className='d-flex flex-start align-items-center '>
+          <button  className='btn ' style={{ 'border':'none', 'cursor': 'hover', 'padding':'0px'}}   onClick={() => sideToHome(false)}> <FontAwesomeIcon  className='fa-fw 'icon="grip-lines"  /></button>
           <p className='m-0 ms-5'>SideBar</p>
           </div>
 
           <Offcanvas.Title>{homeToSide}</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className=''>
      Hello Visitor!< br/>  <br/> Benvenuto  in <br/> React Web App... <br/> <br/> 
      Il progetto è ancora in corso... <br /> < br/> 
     DONE: < br/> 

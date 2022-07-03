@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const NavBar = ({navToHome}) => {
    return(
     <div>
-      <nav className="nav border-0  border-bottom  fixed-start " style={{'minHeight': '3rem'}} >
+      <nav className="nav bg-white border-0  border-bottom fixed-top" style={{'minHeight': '3rem'}} >
       <div className='d-flex flex-start align-items-center ' style={{'padding': '1rem 1rem'   }}>
   
           <button 

@@ -32,11 +32,14 @@ const Home = () => {
   
 
   return (
-    <>
-     <NavBar navToHome={navToHome}/>
+   
+    <div className='w-100'>
+    <NavBar navToHome={navToHome}/>
      <SideBar sideToHome={sideToHome} homeToSide={dataHome} />
      <Posts/>
-    </>
+    </div>
+  
+ 
   )
 }
 
