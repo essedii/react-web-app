@@ -75,5 +75,7 @@ code {
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+  background: linear-gradient(90deg, rgba(241,223,251,1) 0%, rgba(249,237,237,1) 50%, rgba(255,239,220,1) 100%);
+  ;
 }
 

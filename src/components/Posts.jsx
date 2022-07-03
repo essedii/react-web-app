@@ -7,7 +7,7 @@ import SideBar from "./SideBar";
 const Posts = () => {
   const url = "https://picsum.photos";
   //Page starts from 2 for purely aestetical reason (first page has ugly images)
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(110);
   const [limit, setLimit] = useState(8);
   const [id, setId] = useState();
   const [size, setSize] = useState();
